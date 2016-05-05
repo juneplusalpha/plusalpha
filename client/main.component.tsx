@@ -6,6 +6,7 @@ import * as styles from './main.component.css';
 import SplashComponent from './splash.component';
 import DashboardComponent from './dashboard.component';
 
+var Settings = require('./constraints/settings.json');
 
 export interface IMainProps {
 
@@ -13,6 +14,7 @@ export interface IMainProps {
 
 export interface IMainStatus {
   name?: string;
+  image?: string;
 }
 
 export default class MainComponent extends React.Component<IMainProps, IMainStatus> {
@@ -21,6 +23,7 @@ export default class MainComponent extends React.Component<IMainProps, IMainStat
     let self: MainComponent = this;
     this.state = {
       name: "",
+      image: "abc.png",
     };
   }
   public componentDidMount() { //component first loaded (executed once)
@@ -46,7 +49,7 @@ export default class MainComponent extends React.Component<IMainProps, IMainStat
     return(
       <div className={styles.wrapper}>
         <SplashComponent name={self.state.name}/>
-        <DashboardComponent />
+        <DashboardComponent image={self.state.image}/>
       </div>
     );
   }

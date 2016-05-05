@@ -1,4 +1,5 @@
 {
   "uBaseName": "/PlusAlpha",
-  "uBaseNameForWebPack": "/PlusAlpha/"
+  "uBaseNameForWebPack": "/PlusAlpha/",
+  "uStaticImage": "/static/images/"
 }

@@ -2,3 +2,5 @@ node_modules/
 client/**/*.js
 client/**/*.js.map
 npm-debug.log.*
+
+static/images/*.*

@@ -26576,6 +26576,7 @@
 	
 	var React = __webpack_require__(/*! react */ 1);
 	var styles = __webpack_require__(/*! ./dashboard.component.css */ 232);
+	var Settings = __webpack_require__(/*! ./constraints/settings.json */ 234);
 	
 	var DashboardComponent = function (_React$Component) {
 	    _inherits(DashboardComponent, _React$Component);
@@ -26585,8 +26586,16 @@
 	
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DashboardComponent).call(this, props));
 	
+	        _this.updateProps = function (props) {
+	            var self = _this;
+	            self.setState({
+	                image: props.image
+	            });
+	        };
 	        var self = _this;
-	        _this.state = {};
+	        _this.state = {
+	            image: ""
+	        };
 	        return _this;
 	    }
 	
@@ -26594,6 +26603,7 @@
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            var self = this;
+	            self.updateProps(self.props);
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
@@ -26605,13 +26615,15 @@
 	        value: function componentWillReceiveProps(nextProps) {
 	            //receive properties from parents
 	            var self = this;
+	            self.updateProps(nextProps);
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            var self = this;
 	            //template
-	            return React.createElement("div", { className: styles.wrapper }, "dashboard");
+	            console.log(self.state.image);
+	            return React.createElement("div", { className: styles.wrapper }, "dashboard", React.createElement("img", { src: Settings.uBaseName + Settings.uStaticImage + self.state.image }));
 	        }
 	    }]);
 	
@@ -26679,7 +26691,8 @@
 
 	module.exports = {
 		"uBaseName": "/PlusAlpha",
-		"uBaseNameForWebPack": "/PlusAlpha/"
+		"uBaseNameForWebPack": "/PlusAlpha/",
+		"uStaticImage": "/static/images/"
 	};
 
 /***/ },
@@ -26875,6 +26888,7 @@
 	var styles = __webpack_require__(/*! ./main.component.css */ 243);
 	var splash_component_1 = __webpack_require__(/*! ./splash.component */ 237);
 	var dashboard_component_1 = __webpack_require__(/*! ./dashboard.component */ 231);
+	var Settings = __webpack_require__(/*! ./constraints/settings.json */ 234);
 	
 	var MainComponent = function (_React$Component) {
 	    _inherits(MainComponent, _React$Component);
@@ -26886,7 +26900,8 @@
 	
 	        var self = _this;
 	        _this.state = {
-	            name: ""
+	            name: "",
+	            image: "abc.png"
 	        };
 	        return _this;
 	    }
@@ -26917,7 +26932,7 @@
 	        value: function render() {
 	            var self = this;
 	            //template
-	            return React.createElement("div", { className: styles.wrapper }, React.createElement(splash_component_1.default, { name: self.state.name }), React.createElement(dashboard_component_1.default, null));
+	            return React.createElement("div", { className: styles.wrapper }, React.createElement(splash_component_1.default, { name: self.state.name }), React.createElement(dashboard_component_1.default, { image: self.state.image }));
 	        }
 	    }]);
 	
