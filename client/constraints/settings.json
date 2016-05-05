@@ -1,3 +1,4 @@
 {
-  "uBaseName": "/PlusAlpha"
+  "uBaseName": "/PlusAlpha",
+  "uBaseNameForWebPack": "/PlusAlpha/"
 }

@@ -1,7 +1,7 @@
 @media all {
   :local(.wrapper) {
-    background-color: rgba(235,245,200,1);
-    height: 44%;
+    background-color: rgba(255,230,200,1);
+    height: 56%;
     width: 100%;
   }
 }
@@ -11,5 +11,4 @@
 }
 
 @media screen and (max-device-aspect-ration: 1/1) {
-
 }

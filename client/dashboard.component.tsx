@@ -35,7 +35,7 @@ export default class DashboardComponent extends React.Component<IDashboardProps,
     //template
     return(
       <div className={styles.wrapper}>
-        Dashboard
+        dashboard
       </div>
     );
   }
